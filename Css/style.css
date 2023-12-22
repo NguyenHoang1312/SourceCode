@@ -1,0 +1,57 @@
+*::selection {
+    background-color: yellow;
+    color: blue;
+}
+body {
+    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fusogorsk.com%2Fanh-doa-ma-kinh-di%2F&psig=AOvVaw2bTQxy-MMKgnwfXB14cc2H&ust=1682612330920000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOjm3cn5x_4CFQAAAAAdAAAAABAd);
+    background-size: 100px;
+}
+body {
+    cursor: crosshair;
+}
+
+img.youtube {
+    width: 144px;
+    height: 60px;
+}
+div.caption {
+    font-size: 30px;
+    color: purple;
+}
+img.avatar {
+    width: 45px;
+    height: 45px;
+}
+button.sub:active {
+    color: white;
+}
+button.sub {
+    background-color: red;
+}
+button.sub:hover {
+    background-color: white;
+}
+/* .cmt {
+    content: "";
+    display: block;
+    background-color: gray;
+    width: 45vw;
+    height: 20vh;
+}*/
+.cmt::before {
+    content: "";
+    display: block;
+    background-color: white;
+    width: 1em;
+    height: 1em;
+}
+.cmt::after {
+    content: "";
+    display: block;
+    background-color: blue;
+    width: 1em;
+    height: 1em;
+}
+/* div.caption::first-letter {
+    color: green !important;
+} */
