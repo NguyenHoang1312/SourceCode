@@ -10,5 +10,5 @@ int main() {
     int n;
     std::cout << "Nhap so tu nhien n: ";
     std::cin >> n;
-    std::cout << (isPrime(n)?:"La so nguyen to!":"Khong phai so nguyen to!");
+    std::cout << (isPrime(n)?"La so nguyen to!":"Khong phai so nguyen to!");
 }
