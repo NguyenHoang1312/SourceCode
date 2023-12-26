@@ -1,49 +1,30 @@
-#include<bits/stdc++.h>
-using namespace std;
-//linked list
-struct Node {
-    int data;
-    Node* next;
-};
-typedef Node* node;
-
-node createNode(int data) {
-    node temp = new Node();
-    temp->data = data;
-    temp->next = nullptr;
-    return temp;
-}
-
-void pushNode(node &a, int data) {
-    node temp = createNode(data);
-    node p = a;
-    while (p->next != nullptr) 
-        p = p->next;
-    p->next = temp;
-}
-
-void popNode(node &a) {
-    node p = a;
-    while (p->next != nullptr)
-        p = p->next;
-    p = nullptr;
-}
-
-void printNode(node a) {
-    node p = a;
-    while (p != nullptr) {
-        cout << a->data << " ";
-        p = p->next;
-    }
-    cout << endl;
-}
+#include<iostream>
+#include<queue>
+#include<string>
 
 int main() {
-    node a = createNode(1);
-    pushNode(a, 2);
-    pushNode(a, 3);
-    pushNode(a, 4);
-    printNode(a);
-    popNode(a);
-    printNode(a);
+    int num;
+    std::cout << "Input n = ";
+    std::cin >> num;
+    
+    std::queue<std::string> binary;
+    std::vector<std::string> result;
+    binary.push("0");
+    binary.push("1");
+    result.push_back("0");
+    result.push_back("1");
+
+    while (true) {
+        std::string top = binary.front();
+        binary.pop();
+        if (top.size() == num+1) break;
+        binary.push(top + "0");
+        binary.push(top + "1");
+        result.push_back(top + "0");
+        result.push_back(top + "1");
+    }
+
+    std::cout << "Result:\n";
+    for (std::string it: result)
+        if (it.size() == num) std::cout << it << std::endl;
 }
