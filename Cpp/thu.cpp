@@ -1,14 +1,12 @@
-#include<bits/stdc++.h>
-
-bool isPrime(int number) {
-    for (int i = 2; i*i <= number; ++i)
-        if (number % i == 0) return false;
-    return number > 1;
-}
+#include<iostream>
 
 int main() {
-    int n;
-    std::cout << "Nhap so tu nhien n: ";
+    int *a, n;
     std::cin >> n;
-    std::cout << (isPrime(n)?"La so nguyen to!":"Khong phai so nguyen to!");
+    a = new int[n];
+    for (int i = 0; i < n; ++i)
+        std::cin >> a[i];
+    for (int i = n-1; i >= 0; --i)
+        std::cout << a[i] << " ";
+    delete[] a;
 }
