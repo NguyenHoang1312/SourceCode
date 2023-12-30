@@ -1,12 +1,11 @@
-// function isPrime(number) {
-//     for (let i = 2; i*i <= number; ++i) {
-//         if (number % i == 0) {
-//             return false
-//         }
-//     }
-//     return number > 1
-// }
+var course = {
+    name: 'javaScript',
+    coin: 250
+}
 
-// if (isPrime(17)) document.write('Yes')
-// else document.write('No')
-document.write('hwang meme')
+// if (course.coin > 0) console.log(`${course.coin} coins`);
+// else console.log('Free');
+
+var result = (course.coin > 0) ? `${course.coin} coins` : 'Free';
+
+console.log(result);
