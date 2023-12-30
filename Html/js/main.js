@@ -1,11 +1,5 @@
-var course = {
-    name: 'javaScript',
-    coin: 250
-}
+var a = [];
+for (let i = 1; i <= 100; ++i)
+    a.push(i*i);
 
-// if (course.coin > 0) console.log(`${course.coin} coins`);
-// else console.log('Free');
-
-var result = (course.coin > 0) ? `${course.coin} coins` : 'Free';
-
-console.log(result);
+var result = a.reduce
