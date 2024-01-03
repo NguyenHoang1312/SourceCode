@@ -1,8 +1,2 @@
-a = [int(x) for x in range(1, 101)]
+a, b = map(float, input().split())
 
-def check(e):
-    return not e&1
-
-b = list(filter(check, a))
-
-print(b)

@@ -1,49 +1,45 @@
 #include<bits/stdc++.h>
-// using namespace std;
+using namespace std;
 
-// double f(double x) {
-//     return x*x*x + x - 5;
-// }
 double f(double x) {
-    return pow(x, 4) - 4*x - 1;
+    return 8*x*x*x - 3*x*x - 3;
 }
 
-double dayCung(double a, double b) {
-    double x, e = 0.001;
-    do {
-        x = a - ((b-a)*f(a))/(f(b) - f(a));
-        if (f(x)*f(b) < 0) a = x;
-        else if (f(x)*f(a) < 0) b = x;
-    } while (fabs(b-a) > e);
-    return x;
+double fdh(double x) {
+    return 24*x*x - 6*x;
 }
 
-// int main() {
-//     cout << dayCung(1, 2);
-// }
-
-// #include <iostream>
-// #include <cmath>
-
-
-
-double chord_method(double a, double b, double epsilon) {
-    if (f(a)*f(b) >= 0) {
-        std::cout << "Phương pháp dây cung không hội tụ." << std::endl;
-        return 0;
-    }
-    if (fabs(f(a)) < fabs(f(b))) {
-        std::swap(a, b);
-    }
-    while (fabs(b-a) >= epsilon) {
-        double temp = b;
-        b = b - (b-a)*f(b)/(f(b)-f(a));
-        a = temp;
-    }
-    return b;
+double phi(double x) {
+    return pow(0.375 * x*x + 0.375, 0.3333);
 }
+
+double x1(double b, double c) {return -0.2*b + 0.1*c + 0.1;}
+double x2(double c, double a) {return -0.3*a + 0.1*c + 0.9;}
+double x3(double a, double b) {return -0.4*a + 0.3*b + 0.7;}
 
 int main() {
-    std::cout << dayCung(0, 2) << std::endl;
-    return 0;
+    // double a, b;
+    // cin >> a >> b;
+    // double m = a - (b-a)*f(a)/(f(b) - f(a));
+    // double fm = f(m);
+    // double fdhm = fm/fdh(m);
+    // cout << "m = " << fixed << setprecision(4) << m << endl;
+    // cout << "fm = " <<fixed << setprecision(4) << fm << endl;
+    // cout << "f/fdh = " <<fixed << setprecision(4) << fdhm << endl;
+
+    // double x, a, b;
+    // cin >> x;
+    // cout << "xn = " <<fixed << setprecision(4) << phi(x) << endl;
+    // cin >> a >> b;
+    // cout << "saiso = " <<fixed << setprecision(4) << 0.9743/(1-0.9743) * fabs(b-a) << endl;
+
+    // double x;
+    // cin >> x;
+    // cout << "xsau = " <<fixed << setprecision(4) << f(x)/fdh(x) << endl;
+
+    double a, b, c;
+    cin >> a >> b >> c;
+    cout << "x1 = " <<fixed << setprecision(4) << x1(b, c) << endl;
+    cout << "x2 = " <<fixed << setprecision(4) << x2(c, a) << endl;
+    cout << "x3 = " <<fixed << setprecision(4) << x3(a, b) << endl;
 }
