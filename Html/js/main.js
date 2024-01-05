@@ -40,3 +40,21 @@ var someCourses = courses.mySome(function(course) {
 });
 
 console.log(someCourses);
+
+//myEvery
+Array.prototype.myEvery = function(callback) {
+    for (let index in this) {
+        if (this.hasOwnProperty(index)) {
+            if (!callback(this[index], index, this)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+var everyCourses = courses.myEvery(function(course) {
+    return course.isFinish === true;
+});
+
+console.log(everyCourses);
