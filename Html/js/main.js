@@ -1,15 +1,42 @@
-function showTime() {
-    let clock = new Date();
-    // clock.getTime(result_from_Date_getTime);
+var courses = [
+    {name: 'javascript', coin: 680, isFinish: true},
+    {name: 'php', coin: 860, isFinish: true},
+    {name: 'ruby', coin: 980, isFinish: true}
+];
 
-    let hour = clock.getHours();
-    let minute = clock.getMinutes();
-    let second = clock.getSeconds();
-
-    console.log(hour, minute, second);
-    console.clear()
-    
+//myFilter
+Array.prototype.myFilter = function(callback) {
+    let output = [];
+    for (let index in this) {
+        if (this.hasOwnProperty(index)) {
+            if (callback(this[index], index, this)) {
+                output.push(this[index]);
+            }
+        }
+    }
+    return output;
 }
 
-showTime();
-setInterval(showTime, 1000);
+var fitlerCourses = courses.myFilter(function(course) {
+    return course.coin > 700;
+});
+
+console.log(fitlerCourses);
+
+//mySome
+Array.prototype.mySome = function(callback) {
+    for (let index in this) {
+        if (this.hasOwnProperty(index)) {
+            if (callback(this[index], index, this)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+var someCourses = courses.mySome(function(course) {
+    return course.coin > 900;
+});
+
+console.log(someCourses);
