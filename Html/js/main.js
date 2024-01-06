@@ -1,13 +1,11 @@
-/**
- * Sử dụng các biến đã cho sẵn dưới đây
- */
+// var unorderedList = document.getElementsByTagName('li');
+// var listItemNodes = document.querySelectorAll('.box-1 li');
 
-var productsListElement = document.getElementsByClassName('products-list');
-var firstProductElement = document.querySelectorAll('.products-list:first-child');
-var buttonElements = document.getElementsByTagName('button');
+// console.log(unorderedList);
+// console.log(listItemNodes);
 
-console.log(productsListElement);
-console.log(firstProductElement);
-console.log(buttonElements);
+var boxNode = document.getElementsByClassName('box-1');
+console.log(boxNode);
 
-
+var a = boxNode.getElementsByTagName('li');
+console.log(a);
