@@ -1,7 +1,13 @@
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var courses = ['HTML & CSS', 'Javascript', 'PHP', 'Java']
 
-var divElement = document.querySelectorAll('div');
-
-for (let i = 0; i < colors.length; ++i) {
-    divElement[i+1].setAttribute('style', 'flex: center; background-color: ' + colors[i]);
+function render(courses) {
+    let ulElement = document.getElementsByTagName('ul');
+    let text = courses.map(function(course) {
+        return `<li>${course}</li>`;
+    });
+    ulElement[0].innerHTML = text.join('');
 }
+
+render(courses);
+// render(courses)
+
