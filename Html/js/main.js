@@ -1,11 +1,7 @@
-// var unorderedList = document.getElementsByTagName('li');
-// var listItemNodes = document.querySelectorAll('.box-1 li');
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 
-// console.log(unorderedList);
-// console.log(listItemNodes);
+var divElement = document.querySelectorAll('div');
 
-var boxNode = document.getElementsByClassName('box-1');
-console.log(boxNode);
-
-var a = boxNode.getElementsByTagName('li');
-console.log(a);
+for (let i = 0; i < colors.length; ++i) {
+    divElement[i+1].setAttribute('style', 'flex: center; background-color: ' + colors[i]);
+}
