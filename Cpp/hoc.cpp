@@ -3,31 +3,31 @@
 #define ll long long
 using namespace std;
 
-bool isPrime(ll number) {
-    for (ll i = 2; i*i <= number; ++i)
-        if (number % i == 0) return false;
-    return number > 1;
-} 
+string pronunciation[10] = {"khong", "mot", "hai", "ba", "bon", "nam", "sau", "bay", "tam", "chin"};
+string decimal[4] = {"", "muoi", "tram", "nghin"};
+
+string pronounceNumber(string number, string pronunciation[], string decimal[]) {
+    if (number.size() > 4) 
+        return "";
+    string result = "", output = "";
+    if (number[number.size()-2] == '0') {
+        pronunciation[0] = "linh";
+        decimal[1] = "";
+    }
+    if (number[number.size()-1] == '0') pronunciation[0] = "";
+    if (number[number.size()-2] == '1') pronunciation[1] = "";
+    for (int i = 0; i < number.size(); ++i) {
+        result = result + " " + pronunciation[(int) (number[i]-48)] + " " + decimal[number.size()-i-1];
+    }
+    stringstream getWord(result);
+    string word;
+    while (getWord >> word) 
+        output += word + " ";
+    return output;
+}
 
 int main() {
-    // ios 
-    ll n, m, u, v, sum;
-    cin >> n >> m;
-
-    ll a[n], b[n];
-    memset(b, 0, sizeof(b));
-
-    for (ll i = 0; i < n; ++i)
-        cin >> a[i];
-
-    b[0] = a[0];
-    for (ll i = 1; i < n; ++i)
-        b[i] = b[i-1] + a[i];
-
-    while (m--) {
-        cin >> u >> v;
-        sum = b[v-1] - b[u-1] + a[u-1];
-        if (isPrime(sum)) cout << "1\n";
-        else cout << "0\n";
-    }
+    string number;
+    cin >> number;
+    cout << pronounceNumber(number, pronunciation, decimal);
 }
