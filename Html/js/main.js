@@ -1,7 +1,35 @@
-var a = [1, 2, 3, [4, 5], 6, [7, 8, 9]];
+let create = document.querySelector('.create');
+let remove = document.querySelector('.remove');
+let colored = document.querySelector('.colored');
+let backgroundColored = document.querySelector('.backgroundColored');
 
-var b = a.reduce((list, child) => {
-    return list.concat(child);
-}, []);
+create.onclick = function() {
+    let pElement = document.createElement('p');
+    let infomation = prompt('Input: ');
+    pElement.innerHTML = '<h1 style="border: solid gray;">' + infomation + '</h1>';
+    document.body.appendChild(pElement);
+};
 
-console.log(b);
+remove.onclick = function() {
+    let pElements = document.getElementsByTagName('p');
+    let lastElement = pElements[pElements.length-1];
+    lastElement.remove();
+}
+
+colored.onclick = function() {
+    let getColor = prompt('What\'s color buddy? (color index)');
+    let command = getColor.split(' ');
+    let color = command[0];
+    let index = command[1];
+    let pElements = document.getElementsByTagName('p');
+    pElements[index].style.color = color;
+}
+
+backgroundColored.onclick = function() {
+    let getColor = prompt('What\'s color buddy? (color index)');
+    let command = getColor.split(' ');
+    let color = command[0];
+    let index = command[1];
+    let pElements = document.getElementsByTagName('p');
+    pElements[index].style.backgroundColor = color;
+}
