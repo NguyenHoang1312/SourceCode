@@ -5,34 +5,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-        "type": "java",
-        "name": "Main",
-        "request": "launch",
-        "mainClass": "Java.Main",
-        "projectName": "UwU_c0d76544"
-    },
-    {
-        "type": "java",
-        "name": "learning",
-        "request": "launch",
-        "mainClass": "Java.learning",
-        "projectName": "UwU_c0d76544"
-    },
-    {
-        "type": "java",
-        "name": "learn",
-        "request": "launch",
-        "mainClass": "learn",
-        "projectName": "UwU_c0d76544"
-    },
-    {
-        "type": "java",
-        "name": "learning",
-        "request": "launch",
-        "mainClass": "learning",
-        "projectName": "UwU_c0d76544"
-    },
-    {
         "name": "C/C++: Build and debug active file",
         "type": "cppdbg",
         "request": "launch",

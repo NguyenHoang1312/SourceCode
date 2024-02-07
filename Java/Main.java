@@ -7,6 +7,7 @@ class Main {
         double d = scan.nextDouble();
         String s = scan.nextLine();
         // Write your code here.
+        
     
         System.out.println("String: " + s);
         System.out.println("Double: " + d);
@@ -14,3 +15,6 @@ class Main {
         scan.close();
     }
 }
+/**
+ * InnerMain
+ */

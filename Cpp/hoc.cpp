@@ -1,33 +1,35 @@
-#include<bits/stdc++.h>
-#define ios ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#include<iostream>
+#include<cmath>
+#include<algorithm>
 #define ll long long
-using namespace std;
 
-string pronunciation[10] = {"khong", "mot", "hai", "ba", "bon", "nam", "sau", "bay", "tam", "chin"};
-string decimal[4] = {"", "muoi", "tram", "nghin"};
+struct Station {
+    int x, y;
+    ll p;
+};
 
-string pronounceNumber(string number, string pronunciation[], string decimal[]) {
-    if (number.size() > 4) 
-        return "";
-    string result = "", output = "";
-    if (number[number.size()-2] == '0') {
-        pronunciation[0] = "linh";
-        decimal[1] = "";
-    }
-    if (number[number.size()-1] == '0') pronunciation[0] = "";
-    if (number[number.size()-2] == '1') pronunciation[1] = "";
-    for (int i = 0; i < number.size(); ++i) {
-        result = result + " " + pronunciation[(int) (number[i]-48)] + " " + decimal[number.size()-i-1];
-    }
-    stringstream getWord(result);
-    string word;
-    while (getWord >> word) 
-        output += word + " ";
-    return output;
+double distance(Station a, Station b) {
+    double dx = a.x - b.x;
+    double dy = a.y - b.y;
+    return sqrt(dx*dx + dy*dy);
 }
 
 int main() {
-    string number;
-    cin >> number;
-    cout << pronounceNumber(number, pronunciation, decimal);
+    int n;
+    std::cin >> n;
+
+    Station list[n];
+    for (int i = 0; i < n; ++i)
+        std::cin >> list[0].x >> list[0].y >> list[0].p; 
+
+    int count, total = 0;
+    for (int i = 0; i < n; ++i) {
+        count = 0;
+        for (int j = 0; j < n; ++j) {
+            int dtc = distance(list[i], list[j]);
+            if (dtc <= list[i].p) ++count;
+        }
+        total = std::max(total, count);
+    }
+    std::cout << total;
 }

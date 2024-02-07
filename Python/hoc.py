@@ -1,6 +1,4 @@
-a, b, c = 1, 3, [4, 5]
-
-print(a)
-print(b)
-print(c)
-
+print("Hello, TEK4.VN")
+print('Hello, TEK4.VN')
+print('''Hello, TEK4.VN''')
+print("""Hello, TEK4.VN""")

@@ -1,35 +1,19 @@
-let create = document.querySelector('.create');
-let remove = document.querySelector('.remove');
-let colored = document.querySelector('.colored');
-let backgroundColored = document.querySelector('.backgroundColored');
+// function sleep(ms) {
+//     return new Promise((resolve) => {
+//         setTimeout(resolve, ms);
+//     });
+// }
 
-create.onclick = function() {
-    let pElement = document.createElement('p');
-    let infomation = prompt('Input: ');
-    pElement.innerHTML = '<h1 style="border: solid gray;">' + infomation + '</h1>';
-    document.body.appendChild(pElement);
-};
+// sleep(1000)
+//     .then(function() {
+//         console.log(1);
+//         return sleep(1000);
+//     })
+//     .then(function() {
+//         console.log(2);
+//         return sleep(1000);
+//     })
 
-remove.onclick = function() {
-    let pElements = document.getElementsByTagName('p');
-    let lastElement = pElements[pElements.length-1];
-    lastElement.remove();
-}
+var a = () => 1+2;
 
-colored.onclick = function() {
-    let getColor = prompt('What\'s color buddy? (color index)');
-    let command = getColor.split(' ');
-    let color = command[0];
-    let index = command[1];
-    let pElements = document.getElementsByTagName('p');
-    pElements[index].style.color = color;
-}
-
-backgroundColored.onclick = function() {
-    let getColor = prompt('What\'s color buddy? (color index)');
-    let command = getColor.split(' ');
-    let color = command[0];
-    let index = command[1];
-    let pElements = document.getElementsByTagName('p');
-    pElements[index].style.backgroundColor = color;
-}
+console.log(a());
