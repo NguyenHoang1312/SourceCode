@@ -1,19 +1,13 @@
-// function sleep(ms) {
-//     return new Promise((resolve) => {
-//         setTimeout(resolve, ms);
-//     });
-// }
+var divElement = document.querySelector('div');
 
-// sleep(1000)
-//     .then(function() {
-//         console.log(1);
-//         return sleep(1000);
-//     })
-//     .then(function() {
-//         console.log(2);
-//         return sleep(1000);
-//     })
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
+var index = 0;
+function changeColor() {
+    divElement.setAttribute('style', 'height: 200px; width: 200px; background-color:' + colors[index]);
+    index += 1;
+    if (index === colors.length) index = 0;
+}
 
-var a = () => 1+2;
+setInterval(changeColor, 500);
 
-console.log(a());
+

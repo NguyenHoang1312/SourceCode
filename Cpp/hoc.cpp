@@ -1,35 +1,26 @@
-#include<iostream>
-#include<cmath>
-#include<algorithm>
-#define ll long long
+#include<bits/stdc++.h>
+using namespace std;
 
-struct Station {
-    int x, y;
-    ll p;
-};
+string convertDecimalToBinary(int number) {
+    string output = "";
+    int temp;
+    while (number > 0) {
+        temp = number % 2;
+        output = to_string(temp) + output;
+        number /= 2;
+    }
+    output.insert(0, 8-output.size(), '0');
+    return output;
+}
 
-double distance(Station a, Station b) {
-    double dx = a.x - b.x;
-    double dy = a.y - b.y;
-    return sqrt(dx*dx + dy*dy);
+string textToBinary(string text) {
+    string output = "";
+    for (int i = 0; i < text.size()-1; ++i)
+        output = output + convertDecimalToBinary((int) text[i]) + " ";
+    output = output + convertDecimalToBinary((int) text[text.size()-1]);
+    return output;
 }
 
 int main() {
-    int n;
-    std::cin >> n;
-
-    Station list[n];
-    for (int i = 0; i < n; ++i)
-        std::cin >> list[0].x >> list[0].y >> list[0].p; 
-
-    int count, total = 0;
-    for (int i = 0; i < n; ++i) {
-        count = 0;
-        for (int j = 0; j < n; ++j) {
-            int dtc = distance(list[i], list[j]);
-            if (dtc <= list[i].p) ++count;
-        }
-        total = std::max(total, count);
-    }
-    std::cout << total;
+    cout << TextToBinary("Hasagi");
 }
