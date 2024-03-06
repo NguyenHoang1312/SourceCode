@@ -1,15 +1,13 @@
-import math
+#1.1
+spells = ['ngàn', 'trăm', 'chục', 'đơn vị']
+number = input()
 
-xa, ya, xb, yb = map(float, input('Nhập lần lượt điểm A và B: ').split())
+spells = spells[::-1]
+number = number[::-1]
+output = ''
 
-# print("Nhập điểm A: ")
-# xa = float(input('+Nhập hoành: '))
-# ya = float(input('+Nhập tung: '))
+for i in range(len(number)):
+    output = number[i] + ' ' + spells[i] + ' ' + output
+    
+print(output)
 
-# print("Nhập điểm B: ")
-# xb = float(input('+Nhập hoành: '))
-# yb = float(input('+Nhập tung: '))
-
-khoangCach = math.sqrt((xa-xb)**2 + (ya-yb)**2)
-
-print('Khoảng cách điểm A và B là: ', round(khoangCach, 4))
