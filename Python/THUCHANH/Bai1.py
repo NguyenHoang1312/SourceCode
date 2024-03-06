@@ -99,4 +99,4 @@
 # if isPrime and isPalindrome:
 #     print('Số hợp lệ')
 # else:
-#     print('Số hợp lệ')
+#     print('Số không hợp lệ')
