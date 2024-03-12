@@ -10,4 +10,8 @@ function changeColor() {
 
 setInterval(changeColor, 500);
 
+var a = [1, 2, 3];
+
+a.
+
 

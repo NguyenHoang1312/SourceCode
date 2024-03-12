@@ -100,3 +100,11 @@
 #     print('Số hợp lệ')
 # else:
 #     print('Số không hợp lệ')
+
+PI = 3.14
+
+def sum(*num):
+    output = 0
+    for i in num:
+        output += i 
+    return output
