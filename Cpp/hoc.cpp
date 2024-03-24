@@ -1,28 +1,16 @@
-//Nguyen Hoàng 
-
 #include<bits/stdc++.h>
 using namespace std;
 
-string convertDecimalToBinary(int number) {
-    string output = "";
-    int temp;
-    while (number > 0) {
-        temp = number % 2;
-        output = to_string(temp) + output;
-        number /= 2;
+void TowerOfHanoi(int n, char a, char b, char c) {
+    if (n == 1)
+        cout << "Move one plate " << a << " -> " << c << endl;
+    else {
+        TowerOfHanoi(n-1, a, c, b);
+        TowerOfHanoi(1, a, b, c);
+        TowerOfHanoi(n-1, b, a, c);
     }
-    output.insert(0, 8-output.size(), '0');
-    return output;
-}
-
-string textToBinary(string text) {
-    string output = "";
-    for (int i = 0; i < text.size()-1; ++i)
-        output = output + convertDecimalToBinary((int) text[i]) + " ";
-    output = output + convertDecimalToBinary((int) text[text.size()-1]);
-    return output;
 }
 
 int main() {
-    cout << TextToBinary("Hasagi");
+    TowerOfHanoi(5, '1', '2', '3');
 }
