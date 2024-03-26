@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<windows.h>
 using namespace std;
 
 void TowerOfHanoi(int n, char a, char b, char c) {
@@ -13,4 +14,5 @@ void TowerOfHanoi(int n, char a, char b, char c) {
 
 int main() {
     TowerOfHanoi(5, '1', '2', '3');
+    Beep((500, 500))
 }

@@ -1,3 +1,20 @@
-names = ['Amir', 'Bear', 'Charlton', 'Daman']
+config = {
+    'Date': '15:03:22',
+    'Time': '09:24:05',
+    'Server': 'HaUIJungle',
+    'Name': 'Root',
+    'Pass': '****'
+}
 
-print(names[-1][-1])
+config['Status'] = 'Active'
+
+config.pop('Time')
+
+config['Name'] = 'Sa'
+
+if 'Server' in config:
+    print('Yes, Server is:', config['Server'])
+else:
+    print('No')
+    
+print(config)
