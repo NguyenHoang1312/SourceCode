@@ -1,4 +1,4 @@
-Nguyễn Bá Hoàng
-13/12/2004
-A11-K58 THPT Đan Phượng
-2022-KHMT02 HaUI
+3 5
+1 3 2 5 4
+3 2 5 3 6
+2 3 5 4 7
