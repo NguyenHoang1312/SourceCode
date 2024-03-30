@@ -11,7 +11,7 @@ config = {
 def printTuDien(td):
     print('Nội dung từ điển:')
     print('+' + '-'*20 + '+' + '-'*20 + '+')
-    print(f'| Keys               | Values             |')
+    print('| Keys' + ' '*15 + '| Values' + ' '*13 + '|')
     print('+' + '-'*20 + '+' + '-'*20 + '+')
     for key in td:
         print(f'| {key:<19}| {td[key]:<19}|')
