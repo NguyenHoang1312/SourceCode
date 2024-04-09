@@ -1,4 +1,5 @@
 package Java;
+import Java.student;
 import java.util.*;
 class Main {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ class Main {
         System.out.println("Double: " + d);
         System.out.println("Int: " + i);
         scan.close();
+        
     }
 }
 /**
