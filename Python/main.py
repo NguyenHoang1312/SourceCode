@@ -1,21 +1,8 @@
-class Person:
-    def __init__(self):
-        self.name = ''; 
-        self.age = 0; 
-        self.score = 0;
-    def __init__(self, name, age, score):
-        self.name = name; 
-        self.age = age; 
-        self.score = score;
-    def setter(self):
-        self.name = input('Nhập tên: ')
-        self.age = input('Nhập tuổi: ')
-        self.score = input('Nhập điểm: ')
-    def getter(self):
-        print('Tên:', self.name);
-        print('Tuổi:', self.age);
-        print('Điểm:', self.score);
+import numpy as np
+import matplotlib.pyplot as pl 
 
-a = Person()
-a.setter()
-a.getter()
+x = np.linspace(1, 100, 10000)
+y = np.exp(np.random.randn(10000))
+
+pl.scatter(x, y, y, y*-120)
+pl.show()
