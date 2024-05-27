@@ -1,64 +1,89 @@
 graph = {
     'a': ['b', 'c', 'd'],
-    'b': ['h', 'i'],
-    'c': ['e', 'f'],
-    'd': ['g'],
-    'h': [],
-    'i': [],
-    'e': [],
-    'f': ['j', 'k'],
-    'g': [],
-    'j': [],
-    'k': [],
+    'b': ['m', 'n'],
+    'c': ['l'],
+    'd': ['o', 'p'],
+    'm': ['x', 'y'],
+    'n': ['u', 'v'],
+    'l': None,
+    'o': ['i', 'j'],
+    'p': None,
+    'x': None,
+    'y': ['r', 's'],
+    'u': None,
+    'v': ['g', 'h'],
+    'i': None,
+    'j': None,
+    'r': None,
+    's': None,
+    'g': None,
+    'h': None,
 }
 
 def dfs(graph, start, end):
     MO = [start]
     DONG = []
-    father = {start: None}
-    path = []
+    PATH = []
+    FATHER = {start: None}
+    goal = None 
+    
     while MO:
         node = MO.pop()
         if node in end:
-            DONG.append(node)
+            goal = node
             break
         DONG.append(node)
-        for neighbor in (graph[node])[::-1]:
-            if neighbor not in MO:
-                MO.append(neighbor)
-                father[neighbor] = node 
-    if end in father:
-        step = end
+        if graph[node] is not None:
+            for neighbor in (graph[node])[::-1]:
+                if neighbor not in MO:
+                    MO.append(neighbor)
+                    FATHER[neighbor] = node 
+                    
+    if goal in FATHER:
+        step = goal
         while step is not None:
-            path.insert(0, step)
-            step = father[step]
-    return DONG, path
+            PATH.insert(0, step)
+            step = FATHER[step]
+
+    if len(PATH) == 0:
+        print(f'Không tồn tại đường đi từ {start} đến {end}.')
+    else:
+        print('Đường đi từ đỉnh tới đích là: ')
+        print(' → '.join(PATH))
+        print('Duyệt theo tìm kiếm chiều sâu: ')
+        print(' → '.join(DONG+[goal]))
 
 def bfs(graph, start, end):
     MO = [start]
     DONG = []
-    father = {start: None}
-    path = []
+    PATH = []
+    FATHER = {start: None}
+    goal = None
+    
     while MO:
         node = MO.pop()
         if node in end:
-            DONG.append(node)
-            break
+            goal = node 
+            break 
         DONG.append(node)
-        for neighbor in (graph[node]):
-            if neighbor not in MO:
-                MO.insert(0, neighbor)
-                father[neighbor] = node 
-    if end in father:
-        step = end
+        if graph[node] is not None:
+            for neighbor in graph[node]:
+                if neighbor not in MO:
+                    MO.insert(0, neighbor)
+                    FATHER[neighbor] = node
+                    
+    if goal in FATHER:
+        step = goal 
         while step is not None:
-            path.insert(0, step)
-            step = father[step]
-    return DONG, path
-        
+            PATH.insert(0, step)
+            step = FATHER[step]
+    
+    if len(PATH) == 0:
+        print(f'Không tồn tại đường đi từ {start} đến {end}.')
+    else:
+        print('Đường đi từ đỉnh tới đích là: ')
+        print(' → '.join(PATH))
+        print('Duyệt theo tìm kiếm chiều rộng: ')
+        print(' → '.join(DONG+[goal]))
 
-search, path = bfs(graph, 'a', 'j')
-print('Thứ tự duyệt từ đỉnh tới đích là:')
-print(' -> '.join(search))
-print('Đường đi từ đỉnh tới đích là:')
-print(' -> '.join(path))
+bfs(graph, 'm', 's')
